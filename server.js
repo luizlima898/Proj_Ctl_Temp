@@ -40,7 +40,7 @@ async function createTable() {
                 id SERIAL PRIMARY KEY,
                 temperatura DOUBLE PRECISION,
                 umidade DOUBLE PRECISION,
-                data_hora TIMESTAMPZ
+                
     );
     `;
     try {
