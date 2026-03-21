@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Dashboard Automação</title>
+   <style>
+    body {
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #227bd4; /* Cinza um pouco mais azulado e nítido */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+    .login-container {
+        background: #ffffff;
+        padding: 2.5rem;
+        border-radius: 12px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        width: 100%;
+        max-width: 400px;
+    }
+    h2 { text-align: center; color: #1a1a1a; margin-bottom: 1.5rem; font-weight: 700; }
+    label { display: block; margin-bottom: 0.6rem; color: #2d3436; font-weight: 600; }
+    input {
+        width: 100%;
+        padding: 0.9rem;
+        border: 2px solid #dfe6e9; /* Borda mais grossa e visível */
+        border-radius: 6px;
+        font-size: 1rem;
+        margin-bottom: 1.2rem;
+        outline: none;
+    }
+    input:focus { border-color: #0984e3; } /* Fica azul quando clica */
+    button {
+        width: 100%;
+        padding: 1rem;
+        background-color: #0984e3;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+</style>
+
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Automação Residencial</h2>
+        <!-- O action="/auth" envia os dados para a rota que criamos no server.js -->
+        <form action="/auth" method="POST">
+            <div class="input-group">
+                <label for="user">Usuário</label>
+                <input type="text" id="user" name="user" required placeholder="Ex: admin">
+            </div>
+            <div class="input-group">
+                <label for="pass">Senha</label>
+                <input type="password" id="pass" name="pass" required placeholder="Ex: 1234">
+            </div>
+            <button type="submit">Entrar no Dashboard</button>
+        </form>
+    </div>
+
+</body>
+</html>
