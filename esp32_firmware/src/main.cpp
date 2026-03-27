@@ -21,7 +21,7 @@ void loop() {
     // Simulando a leitura do sensor (substitua pela leitura real do seu sensor)
      float t = dht.readTemperature();
     float h = dht.readHumidity();
-    String httpRequestData = "{\"temperatura\":" + String(t) + ",\"umidade\":"+String(h)"}";
+    String httpRequestData = "{\"temperatura\":" + String(t) + ",\"umidade\":"+String(h)+"}";
 
     int httpResponseCode = http.POST(httpRequestData);
     
