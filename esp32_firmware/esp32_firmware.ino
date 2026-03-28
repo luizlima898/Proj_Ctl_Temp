@@ -1,6 +1,6 @@
 #include <WiFi.h>
 #include <HTTPClient.h>
-include <DHT.h>
+#include <DHT.h>
 const char* ssid = "Luiz Fernando 2.4Ghz"; //Nome do WiFi
 const char* password = "971942255"; //Senha do WiFi
 //Define conexao com sensor dht22
@@ -50,8 +50,7 @@ void loop() {
     Serial.println(httpResponseCode);
     }
     http.end();
-  }else{
-    Serial.println("Wifi desconectadao");
+  }
   }
   delay(10000);
 }
