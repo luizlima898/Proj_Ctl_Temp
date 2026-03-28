@@ -57,8 +57,8 @@ async function createTable() {
 createTable();
 // --- ROTAS ---
 
-// 1. Rota para o ESP32 enviar temperatura e luz
-app.post('/update-sensor', (req, res) => {
+// 1. Rota para o ESP32 enviar temperatura e umidade
+app.post('/dados', (req, res) => {
     const { temperatura, umidade } = req.body;
     const sql = "INSERT INTO registros (temperatura, umidade) VALUES (?, ?)";
     
