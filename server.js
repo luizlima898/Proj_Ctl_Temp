@@ -59,7 +59,25 @@ createTable();
 
 // 1. Rota para o ESP32 enviar temperatura e umidade
 app.post('/dados', (req, res) => {
+    try{
     const { temperatura, umidade } = req.body;
+    if (temperatura === undefined || umidade === undefined){
+        return res.status(400).json({erro: "Dados inválidos"});
+         }
+         console.log("Dados recebidos: ");
+         console.log("Temperatura: ", temperatura);
+         console.log("Umidade: ", umidade);
+         res.status(200).json({status: "OK"});
+        }catch (erro) { 
+            console.error("Erro no servidor: ", erro);
+            res.status(500).json({erro: "Erro interno"});
+        }
+    });
+
+
+
+
+
     const sql = "INSERT INTO registros (temperatura, umidade) VALUES (?, ?)";
     
     db.query(sql, [temperatura, umidade], (err, result) => {
