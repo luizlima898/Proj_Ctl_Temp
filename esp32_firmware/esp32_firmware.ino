@@ -10,7 +10,7 @@ const char* password = "971942255"; //Senha do WiFi
 
 DHT dht(DHTPIN, DHTTYPE);
 
-const char* serverName = "https://proj-ctl-temp-3.onrender.com/dados"; // 
+const char* serverName = "https://dashboard.render.com/web/srv-d6rjimi4d50c73b6th0g/logs?r=1h/dados";  
 void setup() {
   
  Serial.begin(115200);
