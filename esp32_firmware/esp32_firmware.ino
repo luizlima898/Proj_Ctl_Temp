@@ -10,7 +10,7 @@ const char* password = "971942255"; //Senha do WiFi
 
 DHT dht(DHTPIN, DHTTYPE);
 
-const char* serverName = "https://proj-ctl-temp-3.onrender.com/dados" // 
+const char* serverName = "https://proj-ctl-temp-3.onrender.com/dados"; // 
 void setup() {
   
  Serial.begin(115200);
@@ -37,22 +37,21 @@ void loop() {
     Serial.println("Erro ao ler o sensor!");
     return;
   }
-  HTTPClient http;
-    http.begin(serverUrl);
-    http.addHeader("Content-Type", "application/json");
+  HTTPClient client;
+    client.begin(serverName);
+    client.addHeader("Content-Type", "application/json");
     String json = "{";
     json += "\"temperatura\":" + String(t) +",";
     json += "\"umidade\":" + String(h);
     json += "}";
     
-    int httpResponseCode = http.POST(json);
+    int httpResponseCode = client.POST(json);
     Serial.print("Resposta do HTTP: ");
     Serial.println(httpResponseCode);
     }
-    http.end();
+    delay(10000);
   }
-  }
-  delay(10000);
-}
+  
+
  
 
